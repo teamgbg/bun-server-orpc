@@ -1,0 +1,263 @@
+{
+  "_generated": {
+    "system": "package-json@1.0.0",
+    "status": "generated",
+    "edit": "edit src/ — dependencies and exports derive from imports; everything else preserved"
+  },
+  "name": "@teamscala/orpc",
+  "capability": "ORPC platform surface: procedure/middleware/registry/client/WS stack with row-security, audit-context, session-auth, and Prisma router.",
+  "tier": "server",
+  "type": "module",
+  "version": "2.6.96",
+  "description": "ORPC platform surface: procedure/middleware/registry/client/WS stack with row-security, audit-context, session-auth, and Prisma router.",
+  "imports": {
+    "#orpc/*": "./src/*",
+    "#orpc/*.ts": "./src/*.ts"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@orpc/client": "*",
+    "@orpc/server": "*",
+    "@orpc/tanstack-query": "*",
+    "@teamscala/cache": "*",
+    "@teamscala/db": "*",
+    "@teamscala/hono-boundary": "*",
+    "@teamscala/logger": "*",
+    "@teamscala/os": "*",
+    "valibot": "*"
+  },
+  "devDependencies": {
+    "bun-types": "*",
+    "@happy-dom/global-registrator": "*",
+    "@testing-library/react": "*",
+    "hono": "*"
+  },
+  "exports": {
+    "./app-router": {
+      "types": "./src/app-router.d.ts",
+      "default": "./src/app-router.ts"
+    },
+    "./app-router.ts": {
+      "types": "./src/app-router.d.ts",
+      "default": "./src/app-router.ts"
+    },
+    "./bootstrap-client": {
+      "types": "./src/bootstrap-client.d.ts",
+      "default": "./src/bootstrap-client.ts"
+    },
+    "./bootstrap-client.ts": {
+      "types": "./src/bootstrap-client.d.ts",
+      "default": "./src/bootstrap-client.ts"
+    },
+    "./client-factory": {
+      "types": "./src/client-factory.d.ts",
+      "default": "./src/client-factory.ts"
+    },
+    "./client-factory.ts": {
+      "types": "./src/client-factory.d.ts",
+      "default": "./src/client-factory.ts"
+    },
+    "./client-registry/client-proxy": {
+      "types": "./src/client-registry/client-proxy.d.ts",
+      "default": "./src/client-registry/client-proxy.ts"
+    },
+    "./client-registry/client-proxy.ts": {
+      "types": "./src/client-registry/client-proxy.d.ts",
+      "default": "./src/client-registry/client-proxy.ts"
+    },
+    "./client-registry/get-orpc-client": {
+      "types": "./src/client-registry/get-orpc-client.d.ts",
+      "default": "./src/client-registry/get-orpc-client.ts"
+    },
+    "./client-registry/get-orpc-client.ts": {
+      "types": "./src/client-registry/get-orpc-client.d.ts",
+      "default": "./src/client-registry/get-orpc-client.ts"
+    },
+    "./client-registry/register-orpc-client": {
+      "types": "./src/client-registry/register-orpc-client.d.ts",
+      "default": "./src/client-registry/register-orpc-client.ts"
+    },
+    "./client-registry/register-orpc-client.ts": {
+      "types": "./src/client-registry/register-orpc-client.d.ts",
+      "default": "./src/client-registry/register-orpc-client.ts"
+    },
+    "./client-registry/state": {
+      "types": "./src/client-registry/state.d.ts",
+      "default": "./src/client-registry/state.ts"
+    },
+    "./client-registry/state.ts": {
+      "types": "./src/client-registry/state.d.ts",
+      "default": "./src/client-registry/state.ts"
+    },
+    "./client-registry/types": {
+      "types": "./src/client-registry/types.d.ts",
+      "default": "./src/client-registry/types.ts"
+    },
+    "./client-registry/types.ts": {
+      "types": "./src/client-registry/types.d.ts",
+      "default": "./src/client-registry/types.ts"
+    },
+    "./client-types": {
+      "types": "./src/client-types.d.ts",
+      "default": "./src/client-types.ts"
+    },
+    "./client-types.ts": {
+      "types": "./src/client-types.d.ts",
+      "default": "./src/client-types.ts"
+    },
+    "./configure": {
+      "types": "./src/configure.d.ts",
+      "default": "./src/configure.ts"
+    },
+    "./configure.ts": {
+      "types": "./src/configure.d.ts",
+      "default": "./src/configure.ts"
+    },
+    "./introspection": {
+      "types": "./src/introspection.d.ts",
+      "default": "./src/introspection.ts"
+    },
+    "./introspection.ts": {
+      "types": "./src/introspection.d.ts",
+      "default": "./src/introspection.ts"
+    },
+    "./middleware/api-key-auth": {
+      "types": "./src/middleware/api-key-auth.d.ts",
+      "default": "./src/middleware/api-key-auth.ts"
+    },
+    "./middleware/api-key-auth.ts": {
+      "types": "./src/middleware/api-key-auth.d.ts",
+      "default": "./src/middleware/api-key-auth.ts"
+    },
+    "./middleware/audit-context": {
+      "types": "./src/middleware/audit-context.d.ts",
+      "default": "./src/middleware/audit-context.ts"
+    },
+    "./middleware/audit-context.ts": {
+      "types": "./src/middleware/audit-context.d.ts",
+      "default": "./src/middleware/audit-context.ts"
+    },
+    "./middleware/org-resolver": {
+      "types": "./src/middleware/org-resolver.d.ts",
+      "default": "./src/middleware/org-resolver.ts"
+    },
+    "./middleware/org-resolver.ts": {
+      "types": "./src/middleware/org-resolver.d.ts",
+      "default": "./src/middleware/org-resolver.ts"
+    },
+    "./middleware/row-security": {
+      "types": "./src/middleware/row-security.d.ts",
+      "default": "./src/middleware/row-security.ts"
+    },
+    "./middleware/row-security.ts": {
+      "types": "./src/middleware/row-security.d.ts",
+      "default": "./src/middleware/row-security.ts"
+    },
+    "./middleware/session-auth": {
+      "types": "./src/middleware/session-auth.d.ts",
+      "default": "./src/middleware/session-auth.ts"
+    },
+    "./middleware/session-auth.ts": {
+      "types": "./src/middleware/session-auth.d.ts",
+      "default": "./src/middleware/session-auth.ts"
+    },
+    "./middleware/types": {
+      "types": "./src/middleware/types.d.ts",
+      "default": "./src/middleware/types.ts"
+    },
+    "./middleware/types.ts": {
+      "types": "./src/middleware/types.d.ts",
+      "default": "./src/middleware/types.ts"
+    },
+    "./prisma-model-router": {
+      "types": "./src/prisma-model-router.d.ts",
+      "default": "./src/prisma-model-router.ts"
+    },
+    "./prisma-model-router.ts": {
+      "types": "./src/prisma-model-router.d.ts",
+      "default": "./src/prisma-model-router.ts"
+    },
+    "./procedure-error-report": {
+      "types": "./src/procedure-error-report.d.ts",
+      "default": "./src/procedure-error-report.ts"
+    },
+    "./procedure-error-report.ts": {
+      "types": "./src/procedure-error-report.d.ts",
+      "default": "./src/procedure-error-report.ts"
+    },
+    "./query-factory": {
+      "types": "./src/query-factory.d.ts",
+      "default": "./src/query-factory.ts"
+    },
+    "./query-factory.ts": {
+      "types": "./src/query-factory.d.ts",
+      "default": "./src/query-factory.ts"
+    },
+    "./query-registry": {
+      "types": "./src/query-registry.d.ts",
+      "default": "./src/query-registry.ts"
+    },
+    "./query-registry.ts": {
+      "types": "./src/query-registry.d.ts",
+      "default": "./src/query-registry.ts"
+    },
+    "./server-client-factory": {
+      "types": "./src/server-client-factory.d.ts",
+      "default": "./src/server-client-factory.ts"
+    },
+    "./server-client-factory.ts": {
+      "types": "./src/server-client-factory.d.ts",
+      "default": "./src/server-client-factory.ts"
+    },
+    "./server-client-registry": {
+      "types": "./src/server-client-registry.d.ts",
+      "default": "./src/server-client-registry.ts"
+    },
+    "./server-client-registry.ts": {
+      "types": "./src/server-client-registry.d.ts",
+      "default": "./src/server-client-registry.ts"
+    },
+    "./types": {
+      "types": "./src/types.d.ts",
+      "default": "./src/types.ts"
+    },
+    "./types.ts": {
+      "types": "./src/types.d.ts",
+      "default": "./src/types.ts"
+    },
+    "./ws/client": {
+      "types": "./src/ws/client.d.ts",
+      "default": "./src/ws/client.ts"
+    },
+    "./ws/client.ts": {
+      "types": "./src/ws/client.d.ts",
+      "default": "./src/ws/client.ts"
+    },
+    "./ws/presence": {
+      "types": "./src/ws/presence.d.ts",
+      "default": "./src/ws/presence.ts"
+    },
+    "./ws/presence.ts": {
+      "types": "./src/ws/presence.d.ts",
+      "default": "./src/ws/presence.ts"
+    },
+    "./ws/server": {
+      "types": "./src/ws/server.d.ts",
+      "default": "./src/ws/server.ts"
+    },
+    "./ws/server.ts": {
+      "types": "./src/ws/server.d.ts",
+      "default": "./src/ws/server.ts"
+    }
+  },
+  "repository": "https://github.com/teamgbg/bun-server-orpc",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "sideEffects": [
+    "./src/bootstrap-client.ts"
+  ]
+}
