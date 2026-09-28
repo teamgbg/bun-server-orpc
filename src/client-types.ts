@@ -25,19 +25,19 @@ export type TypedORPCClient<
 	TRouter extends AnyRouter = AnyRouter,
 > = RouterClient<TRouter> & {
 	/**
-	 * Server function procedures (non-Prisma) registered at runtime via
-	 * the generated bundle's fn namespace (orpc-bundle from api_route rows).
-	 * Most members are ROUTERS — two access levels, fn.<router>.<procedure>
-	 * (auth, chatSession, publicAgreement, publicGptSession, ...). A few
-	 * members are BARE procedures registered directly on fn (aiHealth,
-	 * messagingWhatsappSend) and listed explicitly below.
+	 * Server function procedures (non-Prisma) registered at runtime via the
+	 * generated bundle's fn namespace (orpc-bundle from api_route rows). Most
+	 * members are ROUTERS — fn.<router>.<procedure>. A bare procedure listed
+	 * below is one a generated router actually serves: aiHealth and
+	 * communityJoin were removed 2026-09-29 (their fn-router rows named
+	 * @teamscala/page-server, which no package provides, and no router carried
+	 * them) — an unserved name belongs behind the Record index plus the
+	 * caller's guard, never a type that claims the procedure exists.
 	 */
 	fn: Record<
 		string,
 		Record<string, (...args: unknown[]) => Promise<unknown>>
 	> & {
-		aiHealth: (...args: unknown[]) => Promise<unknown>;
-		communityJoin: (...args: unknown[]) => Promise<unknown>;
 		messagingWhatsappSend: (...args: unknown[]) => Promise<unknown>;
 	};
 };
