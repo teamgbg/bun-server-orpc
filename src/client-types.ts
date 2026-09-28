@@ -38,6 +38,7 @@ export type TypedORPCClient<
 		string,
 		Record<string, (...args: unknown[]) => Promise<unknown>>
 	> & {
+		chatHealth: (...args: unknown[]) => Promise<unknown>;
 		messagingWhatsappSend: (...args: unknown[]) => Promise<unknown>;
 	};
 };
