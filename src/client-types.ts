@@ -21,26 +21,23 @@ import type { AnyRouter, RouterClient } from "@orpc/server";
  * Typed ORPC client. Instantiate with a service router for full procedures;
  * the `AnyRouter` default is sound but carries none.
  */
-export type TypedORPCClient<
-	TRouter extends AnyRouter = AnyRouter,
-> = RouterClient<TRouter> & {
-	/**
-	 * Server function procedures (non-Prisma) registered at runtime via the
-	 * generated bundle's fn namespace (orpc-bundle from api_route rows). Most
-	 * members are ROUTERS — fn.<router>.<procedure>. A bare procedure listed
-	 * below is one a generated router actually serves: aiHealth and
-	 * communityJoin were removed 2026-09-29 (their fn-router rows named
-	 * @teamscala/page-server, which no package provides, and no router carried
-	 * them) — an unserved name belongs behind the Record index plus the
-	 * caller's guard, never a type that claims the procedure exists.
-	 */
-	fn: Record<
-		string,
-		Record<string, (...args: unknown[]) => Promise<unknown>>
-	> & {
-		chatHealth: (...args: unknown[]) => Promise<unknown>;
-		messagingWhatsappSend: (...args: unknown[]) => Promise<unknown>;
-	};
+export type TypedOrpcFnMethod = (args?: unknown) => Promise<unknown>;
+
+/**
+ * One fn-tree node: BOTH callable (a bare procedure) and further indexable (a
+ * namespace) — the generated tree contains both, so no two-level Record types
+ * it (measured: the namespaced spelling failed with "Property 'health' does not
+ * exist on type 'BlockOrpcClientMethod'" until the node intersection landed as
+ * BlockOrpcClientNode in ui-foundation 1bb4f735, which this mirrors). The node
+ * types path DEPTH, not that a NAME is served: the proof of a name is the
+ * api_route row plus the regenerated router, never this type.
+ */
+export type TypedOrpcFnNode = TypedOrpcFnMethod & { [key: string]: TypedOrpcFnNode };
+
+export type TypedORPCClient<TRouter extends AnyRouter = AnyRouter> = RouterClient<TRouter> & {
+	/** Server fn procedures (orpc-bundle from api_route rows): a node, so a bare
+	 * procedure (fn.chatHealth) and a namespace (fn.chat.transcribe) both type. */
+	fn: TypedOrpcFnNode;
 };
 
 /**
