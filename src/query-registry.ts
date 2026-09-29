@@ -12,9 +12,13 @@ type OrpcQueryUtils = Record<string, unknown>;
 
 let _orpc: OrpcQueryUtils | null = null;
 
-/** Register the TanStack Query ORPC utils (called once at boot) */
-export function registerOrpcQuery(orpc: OrpcQueryUtils): void {
-	_orpc = orpc;
+/** Register the TanStack Query ORPC utils (called once at boot).
+ *  Accepts `unknown` and narrows at the store: the real value is an orpc
+ *  RouterUtils, a generic mapped type with no implicit string index signature,
+ *  so it is not assignable to the loose Record view consumers index through.
+ *  Same boundary cast as query-factory's lazy proxy. */
+export function registerOrpcQuery(orpc: unknown): void {
+	_orpc = orpc as OrpcQueryUtils;
 }
 
 /** Lazy proxy — safe to use at module scope, resolves on first access */
