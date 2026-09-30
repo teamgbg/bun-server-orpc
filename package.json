@@ -8,7 +8,7 @@
 	"capability": "ORPC platform surface: procedure/middleware/registry/client/WS stack with row-security, audit-context, session-auth, and Prisma router.",
 	"tier": "server",
 	"type": "module",
-	"version": "2.6.96",
+	"version": "2.6.122",
 	"description": "ORPC platform surface: procedure/middleware/registry/client/WS stack with row-security, audit-context, session-auth, and Prisma router.",
 	"imports": {
 		"#orpc/*": "./src/*",
