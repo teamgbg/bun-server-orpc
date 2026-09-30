@@ -1,6 +1,6 @@
 {
 	"_generated": {
-		"system": "package-json@1.0.0",
+		"system": "orpc",
 		"status": "generated",
 		"edit": "edit src/ — dependencies and exports derive from imports; everything else preserved"
 	},
@@ -20,8 +20,10 @@
 	],
 	"dependencies": {
 		"@orpc/client": "*",
+		"@orpc/openapi": "*",
 		"@orpc/server": "*",
 		"@orpc/tanstack-query": "*",
+		"@orpc/valibot": "*",
 		"@teamscala/cache": "*",
 		"@teamscala/db": "*",
 		"@teamscala/hono-boundary": "*",
@@ -59,6 +61,8 @@
 		"./introspection.ts": "./src/introspection.ts",
 		"./middleware/types": "./src/middleware/types.ts",
 		"./middleware/types.ts": "./src/middleware/types.ts",
+		"./openapi": "./src/openapi.ts",
+		"./openapi.ts": "./src/openapi.ts",
 		"./procedure-error-report": "./src/procedure-error-report.ts",
 		"./procedure-error-report.ts": "./src/procedure-error-report.ts",
 		"./query-factory": "./src/query-factory.ts",
