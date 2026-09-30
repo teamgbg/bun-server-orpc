@@ -4,7 +4,7 @@
  * test_vector rows: one `it` per function_call row (args -> value or
  * expect_error) and one per fs_flow row (ordered steps in a temp
  * workspace). This runner carries NO facts: every case is the registry
- * row projected into ./function-contract-rows.json. Regenerate from
+ * row projected into ./openapi-contract-rows.json. Regenerate from
  * inputs/<repo>/function_contract_runner.json; hand edits are overwritten.
  */
 import { describe, expect, it, mock } from "bun:test";
@@ -13,7 +13,7 @@ import { tmpdir } from "node:os";
 import { existsSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
-import projected from "./function-contract-rows.json";
+import projected from "./openapi-contract-rows.json";
 
 const ROWS = (projected.rows ?? projected) as Vector[];
 
@@ -23,7 +23,7 @@ const SELF = import.meta.path;
 const SELECTED = process.env.SCALA_CONTRACT_ROW;
 
 if (!Array.isArray(ROWS)) {
-	throw new Error("./function-contract-rows.json must project an array of rows — the runner executes registry rows, never a hand-written case list");
+	throw new Error("./openapi-contract-rows.json must project an array of rows — the runner executes registry rows, never a hand-written case list");
 }
 
 const PKG = "@teamscala/orpc";
