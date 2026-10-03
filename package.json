@@ -80,7 +80,7 @@
 		"./ws/server": "./src/ws/server.ts",
 		"./ws/server.ts": "./src/ws/server.ts"
 	},
-	"repository": "https://github.com/teamgbg/bun-server-orpc",
+	"repository": "https://github.com/teamgbg/server-orpc-ts",
 	"publishConfig": {
 		"registry": "https://registry.npmjs.org"
 	},
